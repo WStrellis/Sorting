@@ -195,7 +195,6 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-.vscode
 **__pycache__
 
 # End of https://www.gitignore.io/api/windows,macos,linux,python
