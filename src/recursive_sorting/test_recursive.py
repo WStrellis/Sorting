@@ -32,9 +32,11 @@ class RecursiveSortingTests(unittest.TestCase):
     #     self.assertEqual(merge_sort_in_place(arr4, 0, len(arr4)-1), [0,1,2,3,4,5])
     #     self.assertEqual(merge_sort_in_place(arr5, 0, len(arr5)-1), sorted(arr5))
 
-    # def test_merge_sort2(self):
-    #     test_arr = [0, 1, 2, 3, 4, 5]
-    #     assert merge_sort(test_arr) == [[x] for x in test_arr]
+    def test_merge_sort2(self):
+        test_arr = [5, 1, 3]
+        test_arr_2 = [10, 8, 75, 31, 3]
+        assert merge_sort(test_arr) == [1, 3, 5]
+        assert merge_sort(test_arr_2) == sorted(test_arr_2)
 
     def test_facto(self):
         assert facto(3) == 6

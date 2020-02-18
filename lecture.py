@@ -1,3 +1,6 @@
+import random
+
+
 def fibonacci(n):
     if n < 0:
         print('No negative numbers')
@@ -26,6 +29,7 @@ def fibonacci(n):
 def partition_data(arr):
     left = []
     right = []
+    # find pivot point
     pivot = arr[0]
 
     for item in arr[1:]:
@@ -39,7 +43,6 @@ def partition_data(arr):
 
 def quick_sort(arr):
     # decide base case
-    # find pivot point
     if len(arr) <= 1:
         return arr
     # move values to less/greater than lists
@@ -47,4 +50,16 @@ def quick_sort(arr):
     return quick_sort(left) + [pivot] + quick_sort(right)
 
 
-print(quick_sort([5, 6, 23, 65, 4, 23]))
+def quick_sort_2(arr):
+    if arr:
+        pivot = random.choice(arr)
+        low = [n for n in arr if n < pivot]
+        middle = [n for n in arr if n == pivot]
+        high = [n for n in arr if n > pivot]
+        return [*quick_sort_2(low), *middle, *quick_sort_2(high)]
+    else:
+        return []
+
+
+# print(quick_sort([5, 6, 23, 65, 4, 23]))
+print(quick_sort_2([5, 6, 23, 65, 4, 23]))
